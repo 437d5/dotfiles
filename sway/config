@@ -25,7 +25,7 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/wallhaven-kwyz66.jpg fill
+output * bg ~/Pics/wallpapers/wallhaven-wq2r8p.png fill
 #
 # Example configuration:
 #
@@ -37,10 +37,10 @@ output * bg ~/Pictures/wallhaven-kwyz66.jpg fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -59,7 +59,10 @@ output * bg ~/Pictures/wallhaven-kwyz66.jpg fill
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-
+input "3141:32790:SONiX_USB_DEVICE" {
+	xkb_layout us,ru
+	xkb_options grp:alt_shift_toggle
+}
 ### Key bindings
 #
 # Basics:
@@ -198,7 +201,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Volume keybindings
 #
+bindsym XF86AudioMute exec pamixer -t 
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
@@ -220,12 +228,15 @@ bindsym $mod+r mode "resize"
 
 gaps inner 10
 gaps outer 10 
-default_border none
+# borders
+default_border pixel
 default_floating_border none
 font pango:monospace 0
 titlebar_padding 1
 titlebar_border_thickness 0
-
-
-
+focus_follows_mouse no
+# screenshots
+# capture all screens to clipboard    
+bindsym Shift+Print exec grim - | wl-copy    
+bindsym Shift+Print+Ctrl exec grim -g "$(slurp)" - | wl-copy    
 include /etc/sway/config.d/*
