@@ -25,8 +25,8 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pics/wallpapers/wallhaven-wq2r8p.png fill
-#
+#output * bg ~/Pics/wallpapers/wallhaven-wq2r8p.png fill
+output * bg ~/dotfiles/assets/wallhaven-kwyz66.jpg fill
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -206,6 +206,12 @@ bindsym $mod+r mode "resize"
 bindsym XF86AudioMute exec pamixer -t 
 bindsym XF86AudioRaiseVolume exec pamixer -i 5
 bindsym XF86AudioLowerVolume exec pamixer -d 5
+
+
+# Brightness keybindings
+#
+bindsym XF86AudioPrev exec brightnessctl s +10%
+bindsym XF86AudioStop exec brightnessctl s 10%-
 
 # Status Bar:
 #
