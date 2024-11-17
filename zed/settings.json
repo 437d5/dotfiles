@@ -1,0 +1,46 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "vim_mode": true,
+  "ui_font_size": 20,
+  "buffer_font_size": 16,
+  "theme": {
+      "mode": "system",
+      "light": "Atelier Plateau Dark",
+      "dark": "Atelier Plateau Dark"
+  },
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "relative_line_numbers": true,
+  "tab_bar": {
+    "show": true
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "scrollbar": {
+    "show":"never"
+  },
+  "ensure_final_newline_on_save": true,
+  "tab_size": 4,
+  "telemetry": {
+      "diagnostics": false,
+      "metrics": false
+  },
+  "project_panel": {
+      "button": true,
+      "git_status": true,
+      "folder_icons": true,
+      "file_icons": true,
+      "dock": "left",
+      "auto_fold_dirs": false
+  },
+  "soft_wrap": "none"
+}
